@@ -15,6 +15,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.402'
+        source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
     - name: Install dependencies
       run: dotnet restore
     - name: Build
@@ -33,7 +34,7 @@ jobs:
     #- name: dotnet
     #  run : dotnet nuget push *.nupkg --source github --skip-duplicate
     - name: PushGithub
-      #run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
-      run : nuget.exe push  "**/*.nupkg" -NoSymbols -SkipDuplicate
+      run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
+      #run : nuget.exe push  "**/*.nupkg" -NoSymbols -SkipDuplicate
       env:
         NUGET_AUTH_TOKEN: ${{ github.token }}
