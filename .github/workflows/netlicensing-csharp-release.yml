@@ -1,11 +1,10 @@
 name: NetLicensing C# Client - Release
 
 on:
-  workflow_run:
-    workflows: ["NetLicensing C# Client - CI"]
-    branches: [ master ]
-    types:
-      - completed
+  push:
+    branches: 
+      - master
+  
 
 jobs:
   publish-nuget:
@@ -28,5 +27,5 @@ jobs:
         TAG_FORMAT: '*'
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         
-    - name: dotnet
-      run : dotnet nuget push ./bin/Release/HildenCo.Core.0.0.1.nupkg --source "github"
+    #- name: dotnet
+    #  run : dotnet nuget push ./bin/Release/NetLicensingClient.nupkg --source "github"
