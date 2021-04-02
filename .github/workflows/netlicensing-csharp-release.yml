@@ -42,6 +42,6 @@ jobs:
     - name: PushGithub
       #run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
       #run : nuget.exe push  "**/*.nupkg" -ApiKey GITHUB_TOKEN
-      run : dotnet nuget push ./NetLicensingClient/bin/Debug/NetLicensingClient-csharp.2.4.6.nupkg -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate --no-symbols true
+      run : dotnet nuget push ./NetLicensingClient/bin/Debug/NetLicensingClient-csharp.2.4.6.nupkg -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate
       env:
         GITHUB_TOKEN: ${{secrets.My_GITHUB_TOKEN1}}
