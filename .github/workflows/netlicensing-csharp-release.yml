@@ -27,5 +27,5 @@ jobs:
         TAG_FORMAT: '*'
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         
-    #- name: dotnet
-    #  run : dotnet nuget push ./bin/Release/NetLicensingClient.nupkg --source "github"
+    - name: dotnet
+      run : dotnet nuget push NetLicensingClient-csharp.2.4.6.nupkg --api-key GITHUB_TOKEN --source "github"
