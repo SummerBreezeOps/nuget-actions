@@ -18,10 +18,10 @@ jobs:
         source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
       env:
         NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
+    #- name: Install dependencies
+    #  run: dotnet restore
+    #- name: Build
+    #  run: dotnet build --configuration Release --no-restore
     - name: dotnet pack
       run : dotnet pack ./NetLicensingClient/NetLicensingClient.csproj
     #- name: Publish to NuGet
