@@ -19,14 +19,16 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Publish to NuGet
-      uses: brandedoutcast/publish-nuget@v2
-      with:
-        PROJECT_FILE_PATH: NetLicensingClient/NetLicensingClient.csproj
-        PACKAGE_NAME: NetLicensingClient.test.actions
-        VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
-        TAG_FORMAT: '*'
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    - name: dotnet pack
+      run : dotnet pack
+    #- name: Publish to NuGet
+    #  uses: brandedoutcast/publish-nuget@v2
+    #  with:
+    #    PROJECT_FILE_PATH: NetLicensingClient/NetLicensingClient.csproj
+    #    PACKAGE_NAME: NetLicensingClient.test.actions
+    #    VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
+    #    TAG_FORMAT: '*'
+    #    NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         
     - name: dotnet
       run : dotnet nuget push NetLicensingClient.test.actions-csharp.2.4.6.nupkg --api-key GITHUB_TOKEN --source "github"
