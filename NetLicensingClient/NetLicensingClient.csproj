@@ -11,10 +11,10 @@
     <Copyright>© 2010 Labs64 GmbH</Copyright>
     <PackageIconUrl>https://netlicensing.io/img/labs64-avatar-200x200.png</PackageIconUrl>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageLicenseUrl>https://github.com/Labs64/NetLicensingClient-csharp/blob/master/LICENSE</PackageLicenseUrl>
-    <Owners>Labs64</Owners>
+    <PackageLicenseUrl>https://github.com/SummerBreezeOps/nuget-actions/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>SummerBreezeOps</Owners>
     <PackageProjectUrl>https://netlicensing.io</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Labs64/NetLicensingClient-csharp</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SummerBreezeOps/nuget-actions</RepositoryUrl>
     <PackageReleaseNotes>https://netlicensing.io/wiki/changelog</PackageReleaseNotes>
     <Summary>C# wrapper for Labs64 NetLicensing RESTful API</Summary>
     <PackageTags>Labs64 NetLicensing LaaS Licensing-as-a-Service entitlement software-licensing licensing license license-management validation activation concurrent floating metered-consumption node-locked subscription pay-per-use pricing-table membership</PackageTags>
