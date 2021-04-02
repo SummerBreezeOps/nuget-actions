@@ -26,4 +26,4 @@ jobs:
         PROJECT_FILE_PATH: NetLicensingClient/NetLicensingClient.csproj
         VERSION_REGEX: '^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$'
         TAG_FORMAT: '*'
-        #NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
