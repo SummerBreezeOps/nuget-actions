@@ -44,4 +44,4 @@ jobs:
       #run : nuget.exe push  "**/*.nupkg" -ApiKey GITHUB_TOKEN
       run : dotnet nuget push ./NetLicensingClient/bin/Debug/NetLicensingClient-csharp.2.4.6.nupkg -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate --no-symbols true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ GITHUB_TOKEN }}
