@@ -19,8 +19,7 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}} 
     
-    - name : nuget.conf
-      run : cp  D:\a\nuget-actions\nuget.config D:\a\nuget-actions\nuget-actions\nuget.config
+    
     #- name: Install dependencies
     #  run: dotnet restore
     #- name: Build
@@ -43,6 +42,6 @@ jobs:
     - name: PushGithub
       #run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
       #run : nuget.exe push  "**/*.nupkg" -ApiKey GITHUB_TOKEN
-      run : dotnet nuget push ./NetLicensingClient/bin/Debug/NetLicensingClient-csharp.2.4.6.nupkg --skip-duplicate --no-symbols true --source "Source" -k ${{ github.token }}
+      run : dotnet nuget push ./NetLicensingClient/bin/Debug/NetLicensingClient-csharp.2.4.6.nupkg -k ${GITHUB_TOKEN} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate --no-symbols 
       env:
-        NUGET_AUTH_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
