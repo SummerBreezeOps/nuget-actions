@@ -21,7 +21,9 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact    
-        path : D:\a\nuget-actions\nuget.config    
+        path : D:\a\nuget-actions\nuget.config   
+    - name : nuget.conf
+      run : cat D:\a\nuget-actions\nuget-actions\nuget.config
     #- name: Install dependencies
     #  run: dotnet restore
     #- name: Build
