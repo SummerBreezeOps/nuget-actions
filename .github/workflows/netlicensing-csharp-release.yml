@@ -24,6 +24,8 @@ jobs:
     #  run: dotnet build --configuration Release --no-restore
     - name: dotnet pack
       run : dotnet pack ./NetLicensingClient/NetLicensingClient.csproj
+      env:
+        NUGET_AUTH_TOKEN: ${{ github.token }}
     #- name: Publish to NuGet
     #  uses: brandedoutcast/publish-nuget@v2
     #  with:
